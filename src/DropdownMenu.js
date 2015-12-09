@@ -16,6 +16,7 @@ class DropdownMenu extends React.Component {
     this.focusPrevious = this.focusPrevious.bind(this);
     this.getFocusableMenuItems = this.getFocusableMenuItems.bind(this);
     this.getItemsAndActiveIndex = this.getItemsAndActiveIndex.bind(this);
+    this.select = this.select.bind(this);
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
@@ -72,6 +73,10 @@ class DropdownMenu extends React.Component {
     return {items, activeItemIndex};
   }
 
+  select (){
+    
+  }
+  
   getFocusableMenuItems() {
     let menuNode = ReactDOM.findDOMNode(this);
 
@@ -104,6 +109,7 @@ class DropdownMenu extends React.Component {
         className={classNames(className, classes)}
         role="menu"
         aria-labelledby={labelledBy}
+        onSelect={this.select}
         {...props}
       >
         {items}
